@@ -1,0 +1,14 @@
+RISCV_PREFIX        = riscv64-unknown-elf-
+ROOTDIR             = $(shell cd .. && pwd)
+FREERTOS_SOURCE_DIR = $(ROOTDIR)/FreeRTOS-Kernel
+RVSIM               = $(ROOTDIR)/rvsim/rvsim
+GENTRACE            = $(ROOTDIR)/tools/gentrace
+
+AR                  = $(RISCV_PREFIX)ar
+CC                  = $(RISCV_PREFIX)gcc
+OBJDUMP             = $(RISCV_PREFIX)objdump
+OBJCOPY             = $(RISCV_PREFIX)objcopy
+READELF             = $(RISCV_PREFIX)readelf
+
+RISCV_GCC_OPTS      = -march=rv32im -mabi=ilp32 -mcmodel=medany -nostartfiles -nostdlib
+

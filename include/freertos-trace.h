@@ -21,7 +21,7 @@ extern struct barectf_freertos_ctx* trace_freertos_ctx;
     #define traceSTART()              \
         taskENTER_CRITICAL();         \
         barectf_freertos_trace_start( \
-            trace_freertos_ctx,       \
+            trace_freertos_ctx        \
         );                            \
         taskEXIT_CRITICAL();
 #endif /* traceSTART */
@@ -30,7 +30,7 @@ extern struct barectf_freertos_ctx* trace_freertos_ctx;
     #define traceEND()              \
         taskENTER_CRITICAL();       \
         barectf_freertos_trace_end( \
-            trace_freertos_ctx,     \
+            trace_freertos_ctx      \
         );                          \
         taskEXIT_CRITICAL();
 #endif /* traceEND */
