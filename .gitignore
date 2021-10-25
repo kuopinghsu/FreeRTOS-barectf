@@ -1,4 +1,5 @@
 config/metadata
 include/barectf*
-barectf/*
+barectf/metadata
+barectf/barectf.c
 FreeRTOS-Kernel

@@ -9,9 +9,16 @@
 #define STACK_SIZE 512
 #define ITERATIONS 20
 
+#if configUSE_TRACE_FACILITY
+#define TRACE_SIZE 32
+extern struct barectf_freertos_ctx *trace_freertos_ctx;
+#endif
+
 volatile int count = 0;
 
 void vTaskTest( void * pvParameters );
+
+struct platform_ctx *ctx;
 
 /* Task to be created. */
 void vMainTask( void * pvParameters )
@@ -44,6 +51,7 @@ void vMainTask( void * pvParameters )
 
 #if configUSE_TRACE_FACILITY
     traceEND();
+    trace_freertos_fini(ctx);
 #endif
 
     exit(0);
@@ -78,6 +86,12 @@ int main( void )
     printf("Create task\n");
 
 #if configUSE_TRACE_FACILITY
+    ctx = trace_freertos_init(TRACE_SIZE, NULL);
+    if (!ctx) {
+        printf("Open trace file error");
+        exit(-1);
+    }
+    trace_freertos_ctx = trace_freertos_get_barectf_ctx(ctx);
     traceSTART();
 #endif
 

@@ -12,6 +12,7 @@ FREERTOS_SRC = \
 
 PORT_SRC = $(FREERTOS_SOURCE_DIR)/portable/GCC/RISC-V/port.c \
            $(ROOTDIR)/barectf/barectf.c \
+           $(ROOTDIR)/barectf/barectf-platform.c \
            Common/port.c \
            Common/syscall.c \
            Common/printf.c \

@@ -2,6 +2,7 @@
 #define INCLUDE_TRACE_FREERTOS_H
 
 #include "barectf.h"
+#include "barectf-platform.h"
 
 extern struct barectf_freertos_ctx* trace_freertos_ctx;
 

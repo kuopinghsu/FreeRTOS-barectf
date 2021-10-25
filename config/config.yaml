@@ -9,7 +9,7 @@ trace:
     native-byte-order: little-endian
     clock-types:
       hrclock:
-        $c-type: uint32_t
+        $c-type: uint64_t
         frequency: 1000000 # 1 MHz
         origin-is-unix-epoch: false
 

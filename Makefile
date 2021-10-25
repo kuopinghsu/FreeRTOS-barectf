@@ -13,14 +13,14 @@ check:
 	[ -d FreeRTOS-Kernel ] || git clone -b ${FREERTOS_VER} https://github.com/FreeRTOS/FreeRTOS-Kernel.git FreeRTOS-Kernel
 
 barectf:
-	@mkdir -p barectf
 	cd config && barectf generate --code-dir ../barectf \
         --headers-dir ../include --metadata-dir ../barectf config.yaml && cd ..
 
 clean:
 	make -C Demo clean
 	make -C rvsim clean
+	-rm barectf/metadata barectf/barectf.c
 
 distclean:
-	rm -rf FreeRTOS-Kernel barectf
+	rm -rf FreeRTOS-Kernel
 
