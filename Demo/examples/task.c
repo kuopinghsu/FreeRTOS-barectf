@@ -7,10 +7,10 @@
 
 #define NTASKS     8
 #define STACK_SIZE 512
-#define ITERATIONS 20
+#define ITERATIONS 10
 
 #if configUSE_TRACE_FACILITY
-#define TRACE_SIZE 32
+#define TRACE_SIZE 16384
 extern struct barectf_freertos_ctx *trace_freertos_ctx;
 #endif
 

@@ -79,7 +79,7 @@ struct platform_ctx *trace_freertos_init(const unsigned int buf_size,
     cbs.close_packet = close_packet;
 
     /* Allocate platform context (which contains a barectf context) */
-    platform_ctx = malloc(sizeof(*platform_ctx));
+    platform_ctx = malloc(sizeof(struct platform_ctx));
 
     if (!platform_ctx) {
         goto error;
@@ -89,6 +89,7 @@ struct platform_ctx *trace_freertos_init(const unsigned int buf_size,
     buf = malloc(buf_size);
 
     if (!buf) {
+        printf("malloc fail\n");
         goto error;
     }
 
