@@ -1,5 +1,9 @@
-config/metadata
 include/barectf*
-barectf/metadata
 barectf/barectf.c
 FreeRTOS-Kernel
+trace.ctf
+metadata
+rvsim
+*.a
+*.o
+*.elf*

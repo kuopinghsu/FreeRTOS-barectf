@@ -67,6 +67,16 @@ task has switched out to **estimate** the stack usage.
 Many tracepoints are not generated for now since they aren't needed in the
 current analyses. That said, they can be easily added.
 
+## Platform Examples
+
+This is an example to test [srv32](https://github.com/kuopinghsu/srv32) on FreeRTOS. The code can be run on the ISS (Instruction Set Simulator) of srv32 to generate CTF trace data. I use [srv32](https://github.com/kuopinghsu/srv32) to run the test, and this can be easily ported to another platform.
+
+Requirement: Install the toolchains. See details in srv32 [Building toolchains](https://github.com/kuopinghsu/srv32#building-toolchains) section.
+
+The file "trace.ctf" will be generated under tracedata folder. Open it by the Trace Compass.
+
+    $ make run
+
 ## Support
 
 Feel free to contact me or open an issue if any help is needed.

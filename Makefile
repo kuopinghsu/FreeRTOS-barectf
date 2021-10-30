@@ -14,12 +14,12 @@ check:
 
 barectf:
 	cd config && barectf generate --code-dir ../barectf \
-        --headers-dir ../include --metadata-dir ../barectf config.yaml && cd ..
+        --headers-dir ../include --metadata-dir ../tracedata config.yaml && cd ..
 
 clean:
 	make -C Demo clean
 	make -C rvsim clean
-	-rm barectf/metadata barectf/barectf.c
+	-rm tracedata/metadata tracedata/trace.ctf barectf/barectf.c
 
 distclean:
 	rm -rf FreeRTOS-Kernel

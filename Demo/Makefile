@@ -47,7 +47,7 @@ PROG	 = $(DEMO_SRC:.c=.elf)
 all: $(FREERTOS_LIBRARY) $(PROG) 
 
 run:
-	cd examples && $(RVSIM) task.elf
+	cd examples && $(RVSIM) task.elf && mv dump.bin $(ROOTDIR)/tracedata/trace.ctf
 
 %.o: %.c
 	$(CC) -c $(CFLAGS) -o $@ $<
